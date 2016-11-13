@@ -18,10 +18,10 @@ user = raw_input('Introduce el usuario LDAP: ')
 passwd = getpass.getpass('Contraseña del usuario %s LDAP: ' % user)
 
 # JSON
-f = open(clase.json,'r')
+f = open("clase.json",'r')
 contenido = f.read()
 f.close()
-json_clase = loads(contentenido)
+json_clase = loads(contenido)
 lista_clase = json_clase[alumnos]
 
 # LDAP
@@ -52,3 +52,5 @@ try:
 		print 'Usuario %s insertado.' % uid 
 
 	l.unbind_s()
+except ldap.LDAPError, e:
+	print 'ERROR: ' + e[0]['desc']
