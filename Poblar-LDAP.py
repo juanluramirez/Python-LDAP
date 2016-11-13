@@ -10,10 +10,9 @@ from json import loads
 # Values #
 #user = 'admin'
 conection = "ldap://localhost:389/"
-dom = 'dc=example,dc=org'
+dom = 'dc=jlramirez,dc=gonzalonzareno,dc=org'
 uidNumberInitial = 2000
 gidNumber = 2000
-# Values #
 
 user = raw_input('Introduce el usuario LDAP: ')
 passwd = getpass.getpass('Contraseña del usuario %s LDAP: ' % user)
