@@ -49,7 +49,7 @@ try:
 		l.add_s(dn,ldif)
 		uidNumberInitial += 1
 		print 'Usuario %s insertado.' % uid 
-	for i in datos["computers"]:
+	for i in json_humans["computers"]:
 		dn="uid=%s,ou=Computers,dc=barney,dc=jlramirez,dc=gonzalonazareno,dc=org" % str(i["ipv4"])
 		attrs1 = {}
 		attrs1['objectclass'] = ['top','device','ldapPublicKey','ipHost']
@@ -57,6 +57,8 @@ try:
 		attrs1['ipHostNumber'] = str(i["ipv4"])
 		attrs1['sshPublicKey'] = str(i["clave"])
 		ldif = modlist.addModlist(attrs1)
-		conexion_ldap.add_s(dn,ldif)
-		print 'Usuario %s insertado.' % cn 
+		l.add_s(dn,ldif)
+		print 'Computer %s insertado.' % str(i["ipv4"])
 	l.unbind_s()
+except ldap.LDAPError, e:
+        print 'ERROR: ' + e[0]['desc']
