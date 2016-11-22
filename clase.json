@@ -143,7 +143,7 @@
         {
             "hostname" : "barney",
             "ipv4" : "172.22.200.130",
-            "clave" : "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBF0MA+wx/h1UyDnlKRSLsfaFzVM+8jL7/pFg3po/Sp7L6qnwX7JlliHMLJpMA0k61u8YpIbbh5+hF1ilaRMN8k0= root@barney" 
+            "clave" : "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHTbWyeG4BQZ6cPyak5I9YGWO+JwRko5zcWRjy5B0MvrrvpfHBrQu/CsWEGaFwqDiDgI6Z8O2G7RBZnd8k5v2iM= root@barney" 
         },
         {
             "hostname" : "barney",
@@ -153,7 +153,7 @@
         {
             "hostname" : "barney.jlramirez.gonzalonazareno.org",
             "ipv4" : "172.22.200.137",
-            "clave" : "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBE6oAKo3jlgFXR5CLy1/4rmCf00d1OcIIxsROQHc5iu5ZTcyiYLM70EebyyIkLc6zNa2SGclbc7I99m+mO2WfHM= root@barney" 
+            "clave" : "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBP1K255SjxZiKMycHQze4vLuVm0NGh0M0qrNe75zyCAFC0lrLPD83UGTy+yxDn55DK90ADXipCd6rUGZ0I/v3dM= root@barney" 
         },
         {
             "hostname" : "barney.alcocer.gonzalonazareno.org",

@@ -11,7 +11,7 @@ conection = "ldap://172.22.200.151:389/"
 file_name = 'clase.json'
 dom = 'dc=barney,dc=jlramirez,dc=gonzalonazareno,dc=org'
 uidNumberInitial = 2000
-gidNumber = 2000
+gidNumber = 2002
 
 
 user = 'admin'
@@ -34,7 +34,7 @@ try:
 		apellidos = i['apellidos'].encode('utf8')
 		uid = str(i['usuario'])
 		attrs = {}
-		dn = "cn=%s,%s" % (uid, dom)
+		dn="uid=%s,ou=People,dc=barney,dc=jlramirez,dc=gonzalonazareno,dc=org" % str(i["usuario"])
 		attrs['objectClass'] = ['top', 'posixAccount', 'inetOrgPerson', 'ldapPublicKey']
 		attrs['uid'] = uid
 		attrs['cn'] = nombre
@@ -49,5 +49,14 @@ try:
 		l.add_s(dn,ldif)
 		uidNumberInitial += 1
 		print 'Usuario %s insertado.' % uid 
-
+	for i in datos["computers"]:
+		dn="uid=%s,ou=Computers,dc=barney,dc=jlramirez,dc=gonzalonazareno,dc=org" % str(i["ipv4"])
+		attrs1 = {}
+		attrs1['objectclass'] = ['top','device','ldapPublicKey','ipHost']
+		attrs1['cn'] = str(i["hostname"])
+		attrs1['ipHostNumber'] = str(i["ipv4"])
+		attrs1['sshPublicKey'] = str(i["clave"])
+		ldif = modlist.addModlist(attrs1)
+		conexion_ldap.add_s(dn,ldif)
+		print 'Usuario %s insertado.' % cn 
 	l.unbind_s()
