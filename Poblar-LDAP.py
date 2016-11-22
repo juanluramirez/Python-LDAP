@@ -1,39 +1,38 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 import ldap
 from ldap import modlist
 import getpass
 from json import loads
 
 # Values #
-#user = 'admin'
-conection = "ldap://localhost:389/"
-dom = 'dc=gonzalonzareno,dc=org'
+conection = "ldap://172.22.200.151:389/"
+file_name = 'clase.json'
+dom = 'dc=barney,dc=jlramirez,dc=gonzalonazareno,dc=org'
 uidNumberInitial = 2000
 gidNumber = 2000
 
-user = raw_input('Introduce el usuario LDAP: ')
+
+user = 'admin'
 passwd = getpass.getpass('Contraseña del usuario %s LDAP: ' % user)
 
-# JSON
-f = open("clase.json",'r')
-contenido = f.read()
+# Carga fichero JSON
+f = open(file_name,'r')
+content = f.read()
 f.close()
-json_clase = loads(contenido)
-lista_clase = json_clase[alumnos]
+json_humans = loads(content)
 
-# LDAP
+# Poblar LDAP
 try:
 	bind = "cn=%s,%s" % (user, dom)
 	l = ldap.initialize(conection)
 	l.simple_bind_s(bind,passwd)
 
-	for usuarios in lista_clase:
-		nombre = usuarios['nombre'].encode('utf8')
-		apellidos = usuarios['apellidos'].encode('utf8')
-		uid = str(usuarios['usuario'])
+	for i in json_humans['personas']:
+		nombre = i['nombre'].encode('utf8')
+		apellidos = i['apellidos'].encode('utf8')
+		uid = str(i['usuario'])
 		attrs = {}
 		dn = "cn=%s,%s" % (uid, dom)
 		attrs['objectClass'] = ['top', 'posixAccount', 'inetOrgPerson', 'ldapPublicKey']
@@ -52,5 +51,3 @@ try:
 		print 'Usuario %s insertado.' % uid 
 
 	l.unbind_s()
-except ldap.LDAPError, e:
-	print 'ERROR: ' + e[0]['desc']
