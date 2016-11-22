@@ -7,7 +7,7 @@ import getpass
 from json import loads
 
 # Values #
-conection = "ldap://172.22.200.151:389/"
+conection = "ldap://172.22.200.137:389/"
 file_name = 'clase.json'
 dom = 'dc=barney,dc=jlramirez,dc=gonzalonazareno,dc=org'
 uidNumberInitial = 2000
