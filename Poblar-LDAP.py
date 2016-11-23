@@ -46,9 +46,12 @@ try:
 		attrs['loginShell'] = '/bin/bash'
 		attrs['sshPublicKey'] = str(i['clave'])
 		ldif = modlist.addModlist(attrs)
-		l.add_s(dn,ldif)
-		uidNumberInitial += 1
-		print 'Usuario %s insertado.' % uid 
+		try:
+			l.add_s(dn,ldif)
+			uidNumber = uidNumber + 1
+			print 'Usuario %s insertado.' % uid 
+		except:
+			print "El usuario %s ya existe." % str(i["usuario"])
 	for i in json_humans["computers"]:
 		dn="uid=%s,ou=Computers,dc=barney,dc=jlramirez,dc=gonzalonazareno,dc=org" % str(i["ipv4"])
 		attrs1 = {}
