@@ -1,6 +1,12 @@
 {
     "personas" : [
-
+    {
+            "nombre" : "Alberto",
+            "apellidos" : "Molina Coballes",
+            "correo" : "alb.molina@gmail.com",
+            "usuario" : "alberto.molina",
+            "clave" : "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3AUDWjyPANntK+qwHmlJihKQZ1H+AGN02k06dzRHmkvWiNgou/VcCgowhMTGR+0I6nWVwgRSWKJEUEaMu1r9rEeL63GRtUSepCWpClHJG1CuySuJKVGtRdUq+/szDntpJnJW207a78hTeQLjQsyPvbOqkbulQG7xTRCycdT3bH2UO4JI2d+341gkOlxSG/stPQ52Dsbfb274oMRom5r5f2apD3wbfxE9A6qwm4m70G9NYS7T3uKgCiXegO/3GTJD4UbK0ylGUamG5obdS5yD8Ib12vRCCXWav23SAj/4f9MzAnXX8U4ATM/du2FHZBiIzWVH12LYvIEZpUIVYKPSf alberto@roma"
+        },
         {
             "nombre" : "Francisco Jesús",
             "apellidos" : "Moncayo Hidalgo",
@@ -130,7 +136,12 @@
         ],
 
     "computers" : [
-
+        
+    {
+            "hostname" : "oslo.gonzalonazareno.org",
+            "ipv4" : "172.22.10.255",
+            "clave" : "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJrMhkq7TEhuoubTyM9bfZ/Q6FJNxUIF9eZ7kaQFbU8eFWhwcWFV0bjO0Iaf2Xvpdy3Vig0AxitbWxNXVL85oD4=" 
+        },
         {
             "hostname" : "barney.alevalen.gonzalonazareno.org",
             "ipv4" : "172.22.200.135",
